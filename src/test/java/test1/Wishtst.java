@@ -7,9 +7,7 @@ import page1.Wishlstpg;
 
 
 public class Wishtst extends Baseclstst{
-	public Wishtst(WebDriver driver) {
-		this.driver=driver;
-	}
+	
 
 	@Test
 	public void testwish() throws InterruptedException {

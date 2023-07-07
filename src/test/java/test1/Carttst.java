@@ -7,9 +7,7 @@ import page1.Cartpg;
 
 public class Carttst extends Baseclstst{
 
-	public Carttst(WebDriver driver) {
-		this.driver=driver;
-	}
+
 	@Test
 	public void testcart() throws Exception {
 		BaseLogintst ob=new BaseLogintst(driver);

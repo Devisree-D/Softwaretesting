@@ -6,9 +6,7 @@ import org.testng.annotations.Test;
 import page1.Bookdetailpg;
 
 public class Bookdetailtst extends Baseclstst{
-	public Bookdetailtst(WebDriver driver) {
-		this.driver=driver;
-	}
+	
 	@Test
 	public void testbkdetail() throws Exception {
 		Bookdetailpg ob=new Bookdetailpg(driver);

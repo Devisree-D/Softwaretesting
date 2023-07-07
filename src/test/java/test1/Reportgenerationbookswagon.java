@@ -1,8 +1,13 @@
 package test1;
 
 import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -12,10 +17,23 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class Reportgenerationbookswagon extends Baseclstst{
+public class Reportgenerationbookswagon{
+	WebDriver driver2;
+	String baseurl="https://www.bookswagon.com/";
+
 	ExtentHtmlReporter reporter;
 	ExtentReports extent;
 	ExtentTest test;
+	
+	public Reportgenerationbookswagon(WebDriver driver2)
+	{
+		this.driver2=driver2;
+	}
+	
+	@BeforeClass
+	public void setUp() {
+		driver2=new ChromeDriver();
+	}
 
 	@BeforeTest
 	public void generateReport() {
@@ -30,13 +48,15 @@ public class Reportgenerationbookswagon extends Baseclstst{
 		extent.setSystemInfo("os", "windows11");
 		extent.setSystemInfo("testername", "Devisree");
 		extent.setSystemInfo("Browser Name", "chrome");
+		
+		driver2.get(baseurl);
 
 	}
 	@Test
 	public void homeReport() throws InterruptedException
 	{
 		test=extent.createTest("Homepage report");
-		Hometst obj=new Hometst(driver);
+		Hometst obj=new Hometst();
 		obj.testhome();
 	
 		
@@ -45,21 +65,21 @@ public class Reportgenerationbookswagon extends Baseclstst{
 	public void loginReport() throws InterruptedException
 	{
 		test=extent.createTest("Loginpage report");
-		Logintst obj=new Logintst(driver);
+		Logintst obj=new Logintst();
 		obj.testlogin();
 	}
 	@Test
 	public void searchReport() throws Exception 
 	{
 		test=extent.createTest("Searchpage report");
-		Bookdetailtst obj=new Bookdetailtst(driver);
+		Bookdetailtst obj=new Bookdetailtst();
 		obj.testbkdetail();
 	}
 	@Test
 	public void wishlistReport() throws InterruptedException
 	{
 		test=extent.createTest("Wishpage report");
-		Wishtst obj=new Wishtst(driver);
+		Wishtst obj=new Wishtst();
 		obj.testwish();
 		
 	}
@@ -67,7 +87,7 @@ public class Reportgenerationbookswagon extends Baseclstst{
 	public void cartReport() throws Exception
 	{
 		test=extent.createTest("Cartpage report");
-		Carttst obj=new Carttst(driver);
+		Carttst obj=new Carttst();
 		obj.testcart();
 		
 	}
@@ -87,6 +107,10 @@ public class Reportgenerationbookswagon extends Baseclstst{
 		{
 			test.log(Status.PASS, "test case passed is "+result.getName());
 		}
+	}
+	@AfterTest
+	public void tearDown() {
+		extent.flush();
 	}
 		
 

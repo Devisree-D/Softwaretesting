@@ -3,20 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test1.Reportgenerationbookswagon">
+      <class name="test1.Bookdetailtst">
         <methods>
           <include name="tearDown"/>
-          <include name="generateReport"/>
           <include name="setUp"/>
           <include name="loadUrl"/>
-          <include name="loginReport"/>
-          <include name="homeReport"/>
-          <include name="browserclose"/>
           <include name="afterMeth"/>
-          <include name="wishlistReport"/>
-          <include name="searchReport"/>
+          <include name="testbkdetail"/>
         </methods>
-      </class> <!-- test1.Reportgenerationbookswagon -->
+      </class> <!-- test1.Bookdetailtst -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
