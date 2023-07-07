@@ -33,7 +33,7 @@ public class Bookdetailpg {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(newarr).click();
 		driver.findElement(lang).click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		List<WebElement> srt=driver.findElements(sorting);
 		for(WebElement s:srt)
 		{
@@ -42,7 +42,7 @@ public class Bookdetailpg {
 				s.click();
 			}
 		}
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.manage().window().maximize();
 		driver.findElement(qkrw).click();
 		driver.findElement(clsbtn).click();

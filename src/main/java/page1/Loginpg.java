@@ -28,10 +28,7 @@ public class Loginpg {
 		driver.findElement(mobno).sendKeys(m);
 		driver.findElement(paswd).sendKeys(p);
 		driver.findElement(log).click();
-//		WebElement user=driver.findElement(logname);
-//		act.moveToElement(user);
-//		act.perform();
-//		driver.findElement(logout).click();
+
 	}
 	
 }
